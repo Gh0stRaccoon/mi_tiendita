@@ -1,1 +1,5 @@
-<h1>Hola con handlebars!</h1>
+<div class="row row-cols-2 row-cols-lg-4 row-cols-xl-6 g-3">
+    {{#each products}}
+        {{> common/card }}
+    {{/each}}
+</div>

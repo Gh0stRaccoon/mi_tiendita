@@ -1,13 +1,9 @@
+const { renderContacto, renderHome } = require("../../controllers/ui/views.controllers.js")
 const express = require("express")
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.render('home');
-});
-
-router.get('/contacto', (req, res) => {
-    res.render('contacto');
-});
+router.get('/', renderHome);
+router.get('/contacto', renderContacto);
 
 module.exports = {
     uiRoutes: router
