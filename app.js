@@ -25,7 +25,8 @@ app.set('views', './views');
 
 
 app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(express.json()) // application/json
+app.use(express.urlencoded()) // application/x-www-form-urlencoded
 app.use(routes)
 
 app.listen(PORT, () => {
