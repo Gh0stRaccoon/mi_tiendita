@@ -2,8 +2,19 @@
     <div class="card">
         <img src="{{this.imagen}}" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">{{this.nombre}}</h5>
-            <p class="card-text">{{this.precio}}</p>
+            <div class="d-flex align-items-center gap-2">
+                <h5 class="card-title">{{this.nombre}}</h5>
+                {{#if this.disponible}}
+                <span class="badge rounded-pill bg-success">
+                    DISPONIBLE
+                </span>
+                {{else}}
+                <span class="badge rounded-pill bg-danger">
+                    NO DISPONIBLE
+                </span>
+                {{/if}}
+            </div>
+            <p class="card-text">{{formatCurrency this.precio}}</p>
             <a href="#" class="btn btn-primary">Añadir al carrito</a>
         </div>
     </div>

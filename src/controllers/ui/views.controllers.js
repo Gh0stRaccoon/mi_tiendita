@@ -3,7 +3,7 @@ const STORE_NAME = "Mew's Store"
 const productos = [
     {
         nombre: "Camiseta Básica",
-        precio: 15,
+        precio: 150000,
         disponible: true,
         imagen: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=600"
     },

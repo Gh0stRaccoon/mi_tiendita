@@ -1,14 +1,28 @@
 const path = require("node:path")
 const express = require("express")
-const { engine } = require('express-handlebars');
+const { engine, create } = require('express-handlebars');
 const { routes } = require("./src/routes")
 
 const app = express()
 const PORT = 3000
 
-app.engine('handlebars', engine());
+const hbs = create({
+    helpers: {
+        formatCurrency: function (value) {
+            const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            });
+
+            return formatter.format(value)
+        }
+    }
+})
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
+
 
 app.use(express.static(path.join(__dirname, 'public')))
 
