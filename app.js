@@ -1,6 +1,7 @@
 const path = require("node:path")
 const express = require("express")
-const { engine, create } = require('express-handlebars');
+const { engine, create } = require('express-handlebars')
+const fileUpload = require("express-fileupload") // middleware
 const { routes } = require("./src/routes")
 
 const app = express()
@@ -25,8 +26,10 @@ app.set('views', './views');
 
 
 app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.json()) // application/json
-app.use(express.urlencoded()) // application/x-www-form-urlencoded
+app.use(express.json()) // middleware habilita req.body para application/json
+app.use(express.urlencoded()) // middleware habilita req.body para application/x-www-form-urlencoded
+app.use(fileUpload()) // habilita req.files cuando llegan archivos
+
 app.use(routes)
 
 app.listen(PORT, () => {

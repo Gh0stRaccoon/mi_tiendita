@@ -12,6 +12,7 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1",
+    "express-fileupload": "^1.5.2",
     "express-handlebars": "^9.0.1"
   }
 }

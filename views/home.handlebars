@@ -1,5 +1,11 @@
 <div class="row row-cols-2 row-cols-lg-4 row-cols-xl-6 g-3">
-    {{#each products}}
-        {{> common/card }}
-    {{/each}}
+    {{#if products}}
+        {{#each products}}
+            {{> common/card }}
+        {{/each}}
+    {{else}}
+        <h1>No hay productos, vayase</h1>
+        <a class="btn btn-primary" href="/crear-producto">Crear un producto</a>
+    {{/if}}
+    
 </div>

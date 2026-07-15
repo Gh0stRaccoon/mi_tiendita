@@ -16,7 +16,12 @@ const renderContacto = (req, res) => {
     res.render('contacto', { storeName: STORE_NAME });
 }
 
+const renderCrearProducto = (req, res) => {
+    res.render('crearProducto', { storeName: STORE_NAME });
+}
+
 module.exports = {
     renderHome,
-    renderContacto
+    renderContacto,
+    renderCrearProducto
 }
