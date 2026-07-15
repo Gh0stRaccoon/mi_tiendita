@@ -1,7 +1,8 @@
 const path = require("node:path")
 const express = require("express")
-const { engine, create } = require('express-handlebars')
+const { create } = require('express-handlebars')
 const fileUpload = require("express-fileupload") // middleware
+require('dotenv').config()
 const { routes } = require("./src/routes")
 
 const app = express()
